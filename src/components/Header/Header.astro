@@ -1,0 +1,26 @@
+---
+import './Header.css'
+import Button from '../shared/Button.astro'
+---
+
+<header class="flex-container">
+  <div class="left-side">
+    <h1 class="text-header">A Simple Bookmark Manager</h1>
+    <p class="description-header text-gray">
+      A clean and simple interface to organize your favourite  websites. Open a new browser tab and see your sites load instantly. Try it for free.
+    </p>
+    <div class="buttons-container">
+      <Button 
+        label='Get it on Chrome'
+        type='primary'
+      />
+      <Button 
+        label='Get it on Firefox'
+        type='secondary'
+      />
+    </div>
+  </div>
+  <div class="right-side">
+    <img class="img-hero" src="./assets/illustration-hero.svg" alt="Ilustration Hero">
+  </div>
+</header>

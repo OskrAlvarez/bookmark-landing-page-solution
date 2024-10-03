@@ -1,0 +1,41 @@
+---
+import './faq.css'
+
+import Acordion from "./Accordion/Acordion.astro";
+import AcordionContainer from "./Accordion/AcordionContainer.astro";
+import AcordionTrigger from "./Accordion/AcordionTrigger.astro";
+import AcordionContent from "./Accordion/AcordionContent.astro";
+
+import Button from '../shared/Button.astro'
+
+import { faqList } from 'src/constans'
+---
+
+<section class="faq">
+  <div class="faq-info">
+    <h2 class="faq-heading">Frequently Asked Questions</h2>
+    <p class="faq-paragraph text-gray">
+      Here are some of our FAQs. If you have any other questions you’d like answered please feel free to email us.
+    </p>
+  </div>
+  <div class="faq-acordion">
+    <Acordion>
+      {
+        faqList.map(faq => (
+          <AcordionContainer>
+            <AcordionTrigger title={faq.question} />
+            <AcordionContent content={faq.answer} />
+          </AcordionContainer>
+        ))
+      }
+    </Acordion>
+    <div class="container-button">
+      <Button 
+      label="More Info"
+      type="primary"
+    />
+    </div>
+  </div>
+</section>
+<script src="./faq.js"></script>
+

@@ -1,0 +1,47 @@
+---
+interface Props {
+  label: string;
+  type: 'primary' | 'secondary'
+}
+
+const {label, type} = Astro.props
+---
+
+<a href="#" class={`navlink navlink-${type}`}>
+  {label}
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  .navlink {
+    padding: .85rem 2rem;
+    font-weight: var(--bold);
+    border-radius: .5rem;
+  }
+
+  .navlink-primary {
+    background-color: var(--soft-blue);
+    color: white;
+    transition: background 500ms ease-in-out;
+  }
+
+  .navlink-primary:hover {
+    border: 1px solid var(--soft-blue);
+    color: var(--soft-blue);
+    background-color: #fff;
+  }
+
+  .navlink-secondary {
+    background-color: #f9fafa;
+    color: var(--very-dark-blue);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transition: all 500ms ease-in;
+  }
+
+  .navlink-secondary:hover {
+    border: 1px solid var(--very-dark-blue);
+  }
+</style>

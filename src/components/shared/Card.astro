@@ -1,0 +1,22 @@
+---
+import Button from "./Button.astro"
+
+  const {card} = Astro.props
+---
+
+<div class="card">
+  <div class="card-header">
+    <img src={card.imageUrl} alt={card.cardHeading} />
+  </div>
+  <div class="card-body">
+    <h2>{card.cardHeading}</h2>
+    <p class="card-text text-gray">{card.cardParagraph}</p>
+  </div>
+  <img src="./assets/bg-dots.svg" alt="Dots" />
+  <div class="card-btn">
+    <Button
+      label="Add & Install Extension"
+      type="primary"
+    />
+  </div>
+</div>

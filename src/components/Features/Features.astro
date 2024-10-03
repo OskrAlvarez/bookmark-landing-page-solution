@@ -1,0 +1,57 @@
+---
+import { tabsContentList } from 'src/constans'
+import './Features.css'
+import Button from '../shared/Button.astro'
+---
+
+<section class="features">
+  <div>
+    <h2>
+      Features
+    </h2>
+    <p class="text-gray text-features">
+      Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.
+    </p>
+  </div>
+
+  <div>
+    <section class="tabs">
+      <div class="tab-list">
+        <button class="tab-button active">
+          Simple Bookmarking
+        </button>
+        <button class="tab-button">
+          Speedy Searching
+        </button>
+        <button class="tab-button">
+          Easy Sharing
+        </button>
+      </div>
+      <div class="tab-container">
+        {
+          tabsContentList.map(tab => (
+            <div class="tab-content">
+              <div class="image-tab-container">
+                <img src={tab.tabImage} alt={tab.tabHeading} />
+              </div>
+              <div class="text-tab-container">
+                <h2>{tab.tabHeading}</h2>
+                <p class="text-gray">{tab.tabParagraph}</p>
+
+                <div class="more-info">
+                  <Button 
+                    label='More Info'
+                    type='primary'
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+        
+      </div>
+    </section>
+  </div>
+  </section>
+
+<script src="./feature.js"></script>

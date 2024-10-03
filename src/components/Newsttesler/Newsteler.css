@@ -1,0 +1,110 @@
+.newsteller{
+  background-color: var(--soft-blue);
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.news-heading {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.text-info-news {
+  letter-spacing: 3px;
+  padding-bottom: 2rem;
+}
+
+.btn-form {
+  outline: none;
+  border: none;
+  background-color: var(--soft-red);
+  padding: 1rem 1rem;
+  color: #fff;
+  font-weight: var(--bold);
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: .5rem;
+  height: 45px;
+  transition: background-color 500ms ease-in;
+}
+
+.btn-form:hover {
+  background-color: #fff;
+  color: var(--soft-red);
+  border: 1px solid var(--soft-red);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: .25rem;
+  padding: .85rem 1.25rem;
+  outline: none;
+  position: relative;
+}
+
+.error-icon {
+  display: none;
+  position: absolute;
+  top: 15%;
+  right: 3px;
+
+}
+
+.form-control.error-input{
+  outline: 2px solid var(--soft-red);
+}
+
+.error-message {
+  display: none;
+  font-size: var(--font-xs);
+  line-height: var(--leading-xs);
+  text-align: left;
+  background-color: var(--soft-red);
+  width: 100%;
+  padding: .25rem;
+  border-radius: 0px 0 10px 10px;
+}
+
+.error-message.is-error,
+.error-icon.is-error {
+  display: block;
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) { 
+  .form {
+    flex-direction: row;
+  }
+
+  .news-heading {
+    width: 60%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+}

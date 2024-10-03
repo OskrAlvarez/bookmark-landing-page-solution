@@ -1,9 +1,10 @@
 ---
 interface Props {
 	title: string;
+	favicon: string;
 }
 
-const { title } = Astro.props;
+const { title, favicon } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,8 +13,9 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={favicon} />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="./css/hamburgers.css">
 		<title>{title}</title>
 	</head>
 	<body>
@@ -21,30 +23,55 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		/* Primary Colors */
+		--soft-blue: hsl(231, 69%, 60%);
+		--soft-red: hsl(0, 94%, 66%);
+		
+		/* Neutral Colors */
+		--graylish-blue:hsl(229, 8%, 60%);
+		--very-dark-blue: hsl(229, 31%, 21%);
+		
+		/* Font Family */
+		--font-rubik: "Rubik", sans-serif;
+		--regular: 400; --bold: 500;
+
+		/* Font sizes base = 16px xs = 12px sm= 14px lg:18px */
+		--font-xs: 0.75rem; 
+		--font-sm: 0.875rem; 
+		--font-base: 1rem; 
+		--font-lg: 1.125rem; 
+		/* Line Heights */
+		--leading-xs: 1rem;
+		--leading-sm: 1.25rem;
+		--leading-base: 1.5rem;
+		--leading-lg: 1.75rem;
+
+	}
+
+	*,*::after,*::before {
+		box-sizing: border-box;
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+		font-family: var(--font-rubik);
+		font-size: 16px;
+		line-height: var(--leading-base);
+		overflow-x: hidden;
+		color: var(--very-dark-blue);
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.text-gray {
+		color: var(--graylish-blue);
 	}
 </style>

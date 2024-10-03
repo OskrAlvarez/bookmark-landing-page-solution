@@ -1,0 +1,9 @@
+---
+interface Props {
+  content: string;
+}
+const { content } = Astro.props
+---
+<div class="accordion-content">
+<p class="text-content">{ content }</p>
+</div>

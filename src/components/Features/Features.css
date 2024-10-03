@@ -1,0 +1,129 @@
+.features {
+  margin-top: 200px;
+  text-align: center;
+  padding-inline: 1rem;
+}
+
+.text-features {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tabs {
+  max-width: 95%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: .5rem;
+  overflow:hidden;
+}
+
+.tab-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+}
+
+.tab-button {
+  font-family: inherit;
+  background-color: transparent;
+  padding: .85rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  border-bottom: 2px solid var(--soft-red);
+  font-weight: bold;
+}
+
+.tab-button:hover {
+  color: var(--soft-red);
+  background-color: rgba(0,0,0,.03);
+}
+
+.tab-container {
+  display: flex;
+  flex-wrap: nowrap;
+  transform: translatex(0);
+  transition: transform 500ms ease-in;
+  width: 100%;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  font-weight: 300;
+  font-size: var(--font-sm);
+  line-height: var(--leading-sm);
+  width: 100%;
+  padding: 1.25rem 2rem;
+  flex-shrink: 0;
+}
+
+.image-tab-container,
+.text-tab-container {
+  width: 100%;
+}
+
+.text-tab-container {
+  margin-top: 12px;
+}
+
+.text-tab-container > h2, p {
+  text-align: center;
+  
+}
+
+.more-info {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) { 
+  .tab-list {
+    display: inline-flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    height: 70px;
+  }
+
+  .tab-content {
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .text-tab-container h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+  .text-tab-container p {
+    width: 70%;
+    margin:0;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-align: left;
+  }
+  .image-tab-container,
+  .text-tab-container {
+    width: 50%;
+  }
+
+  .text-features {
+    width: 35%;
+    margin: 0 auto;
+  }
+  
+
+  .more-info {
+    display: block;
+  }
+
+}

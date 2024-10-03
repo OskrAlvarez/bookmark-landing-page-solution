@@ -1,0 +1,50 @@
+---
+  import './NavBar.css'
+---
+<nav class="nav-bar">
+  <!-- Icon Logo -->
+  <section class="image-container"></section>
+  <section class="nav-links-desktop">
+     <a class="nav-link-desk" href="#">Features</a>
+     <a class="nav-link-desk" href="#">Pricing</a>
+     <a class="nav-link-desk" href="#">Contact</a>
+     <a href="#" class="btn-red">Login</a>
+   </div>
+  </section>
+  <!-- Nav Btn Mobile -->
+  <section class="btn-menu-container">
+    <button aria-label="menu-btn" class="btn-hamburger hamburger hamburger--collapse" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+   </section>
+
+   <section class="nav-links-mobile">
+      <a class="nav-link" href="#">Features</a>
+      <a class="nav-link" href="#">Pricing</a>
+      <a class="nav-link" href="#">Contact</a>
+      <a href="#" class="btn btn-outline">Login</a>
+    
+    <div class="social-links">
+      <a href="#">
+        <img src="./assets/icon-facebook.svg" alt="Facebook">
+      </a>
+      <a href="#">
+        <img src="./assets/icon-twitter.svg" alt="Twitter">
+      </a>
+    </div>
+   </section>
+</nav>
+
+<script>
+  const btnHamburger = document.querySelector('.hamburger') as HTMLElement
+  const navLinkscontainer = document.querySelector('.nav-links-mobile') as HTMLElement
+  const imageContainer = document.querySelector('.image-container') as HTMLElement
+
+  btnHamburger?.addEventListener('click', () => { 
+    navLinkscontainer.classList.toggle('open-menu')
+    btnHamburger.classList.toggle('is-active')
+    imageContainer.classList.toggle('open-menu')
+  })
+</script>
